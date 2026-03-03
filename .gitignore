@@ -1,7 +1,20 @@
 # Ignore everything
 /*
 
-# Except the developing-theme
+# Except developing-theme
 !/themes/
 themes/*
 !themes/developing-theme/
+
+# Except custom-portfolio plugin
+!/plugins/
+plugins/*
+!plugins/custom-portfolio/
+
+# Ignore cache, uploads, backups
+uploads/
+cache/
+ai1wm-backups/
+advanced-cache.php
+wp-rocket-config/
+*.log
