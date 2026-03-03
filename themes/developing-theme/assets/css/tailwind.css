@@ -1,0 +1,377 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ul:not(menu, .menu, .sub-menu, .menu-item, .main-menu-item, .sub-menu-item, #menu-main, #menu-main ul){
+    @apply !list-disc !list-inside
+}
+
+
+/*GF styling*/
+
+input[type=text], input[type=email], input[type=tel], .ginput_container textarea, .gfield_select, #order_comments{
+    @apply  w-full !p-3 rounded-lg  text-gray-400 bg-gray-50 border-gray-300 focus:ring-primary-700 focus:border-primary-700
+}
+
+.gform_wrapper .gfield input[type=text], .gform_wrapper .gfield input[type=email], .gform_wrapper .gfield textarea, .gform_wrapper .gfield_select {
+    padding-left: 20px !important;
+}
+
+.gchoice input:checked{
+    @apply bg-primary-700
+}
+
+input[type='checkbox']:checked{
+    @apply bg-primary-700
+}
+
+.gform_button, .gform-button{
+    @apply cursor-pointer mt-2 rounded-lg !bg-primary-700  ring-primary-700 px-6 py-3 !text-base font-normal text-white shadow-sm hover:!bg-primary-800
+}
+
+.gform_wrapper.gravity-theme .gfield_label{
+    @apply !text-sm !font-normal leading-6 text-gray-900
+}
+
+.gform-field-label--type-inline{
+    @apply text-sm font-normal leading-10 text-gray-400
+}
+
+.gform_wrapper.gravity-theme .gf_progressbar_percentage.percentbar_blue{
+    @apply !bg-primary-700
+}
+
+.gform_required_legend{
+    display: none;
+}
+
+.gform_wrapper.gravity-theme .gform_footer, .gform_wrapper.gravity-theme .gform_page_footer{
+    @apply !p-0
+}
+
+.gform_fields .gfield input::-webkit-input-placeholder{
+  @apply text-gray-400 font-normal
+}
+
+body .gform_wrapper ::placeholder,
+body .gform_wrapper ::-webkit-input-placeholder,
+body .gform_wrapper input[placeholder] {
+    @apply text-gray-400 font-normal
+}
+
+/* Menu styling */
+.custom-menu-item{
+    @apply relative after:absolute after:bg-primary-700 after:bottom-0 after:h-0.5 after:w-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full
+}
+
+/* Sub-menu styling */
+.menu-item-has-children {
+    @apply relative
+}
+
+/* Style het pijltje */
+.menu-item-has-children svg {
+    @apply transition-transform duration-300
+}
+
+.menu-item-has-children:hover svg {
+    @apply transform rotate-180
+}
+
+/* Eerste niveau submenu - creëer ruimte tussen hoofdmenu en submenu */
+.sub-menu {
+    @apply hidden absolute bg-white min-w-[200px] z-50 shadow-md rounded-md py-2 left-0
+}
+
+/* Voeg een invisible padding aan de bovenkant toe voor betere hover */
+.menu-item-has-children:after {
+    @apply hidden lg:block absolute content-[''] h-4 w-full left-0 -bottom-4 z-40 bg-transparent pointer-events-auto
+}
+
+/* Pas top margin van submenu aan */
+.menu-item-has-children > .sub-menu {
+    @apply mt-4
+}
+
+/* Zorg dat submenu verschijnt bij hover en een overgangseffect heeft */
+.menu-item-has-children:hover > .sub-menu {
+    @apply block
+}
+
+/* Het submenu blijft ook zichtbaar als je er overheen hovert */
+.sub-menu:hover {
+    @apply block
+}
+
+/* Sub-menu-items styling */
+.sub-menu .custom-menu-item {
+    @apply block w-full p-0
+}
+
+.sub-menu .custom-menu-item a {
+    @apply block px-4 py-2 text-gray-700 hover:bg-gray-100
+}
+
+/* Maak ruimte voor het submenu rechts van een sub-menu-item op het tweede niveau */
+.sub-menu .menu-item-has-children > .sub-menu {
+    @apply left-full top-0 mt-0
+}
+
+/* Voeg een invisible padding aan de rechterkant toe voor betere hover bij submenu's */
+.sub-menu .menu-item-has-children:after {
+    @apply hidden lg:block absolute content-[''] h-full w-4 -right-4 top-0 z-40 bg-transparent pointer-events-auto
+}
+
+/* Reset de 'after' pseudo-element voor submenu items */
+.sub-menu .custom-menu-item:after {
+    @apply hidden
+}
+
+/* Mobiele menu styling */
+@media (max-width: 1023px) {
+    .menu-item-has-children > a {
+        @apply flex justify-between items-center
+    }
+
+    .menu-item-has-children:after {
+        @apply hidden
+    }
+
+    .sub-menu {
+        @apply static w-full shadow-none rounded-none py-0 mt-0 border-l-2 border-gray-200 ml-2 pl-2
+    }
+
+    /* Aangepaste styling voor mobiele expanded submenu's */
+    .sub-menu.mobile-expanded {
+        @apply block
+    }
+    
+    /* Zorg ervoor dat de hover werking op desktop werkt maar niet op mobiel */
+    .menu-item-has-children:hover > .sub-menu {
+        @apply lg:block hidden
+    }
+    
+    /* Geen animatie voor hovereffect op submenu items op mobiel */
+    .custom-menu-item::after {
+        @apply lg:block hidden
+    }
+}
+
+html {
+    @apply scroll-smooth
+}
+
+.tagembed-widget{
+    @apply max-w-screen-xl mx-auto
+}
+
+/* WYSIWYG Editor Content Styling */
+/* Herstel bullet points voor opsommingslijsten */
+body .wp-editor-content ul,
+body .wp-block-post-content ul,
+body .entry-content ul,
+body .acf-editor-wrap .wp-editor-area + .wp-editor-tools ul,
+body .acf-field-wysiwyg .wp-editor-content ul,
+body .acf-block-preview ul,
+body .acf-block-fields ul,
+body .acf-field-wysiwyg ul,
+html body .wp-editor-content ul,
+html body .wp-block-post-content ul,
+html body .entry-content ul {
+    list-style-type: disc !important;
+    list-style-position: outside !important;
+    padding-left: 1.5rem !important;
+    margin: 1rem 0 !important;
+}
+
+body .wp-editor-content ul li,
+body .wp-block-post-content ul li,
+body .entry-content ul li,
+body .acf-editor-wrap .wp-editor-area + .wp-editor-tools ul li,
+body .acf-field-wysiwyg .wp-editor-content ul li,
+body .acf-block-preview ul li,
+body .acf-block-fields ul li,
+body .acf-field-wysiwyg ul li,
+html body .wp-editor-content ul li,
+html body .wp-block-post-content ul li,
+html body .entry-content ul li {
+    margin-bottom: 0.5rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Geneste lijsten */
+body .wp-editor-content ul ul,
+body .wp-block-post-content ul ul,
+body .entry-content ul ul,
+body .acf-editor-wrap .wp-editor-area + .wp-editor-tools ul ul,
+body .acf-field-wysiwyg .wp-editor-content ul ul,
+body .acf-block-preview ul ul,
+body .acf-block-fields ul ul,
+body .acf-field-wysiwyg ul ul,
+html body .wp-editor-content ul ul,
+html body .wp-block-post-content ul ul,
+html body .entry-content ul ul {
+    list-style-type: circle !important;
+    margin: 0.5rem 0 !important;
+}
+
+body .wp-editor-content ul ul ul,
+body .wp-block-post-content ul ul ul,
+body .entry-content ul ul ul,
+body .acf-editor-wrap .wp-editor-area + .wp-editor-tools ul ul ul,
+body .acf-field-wysiwyg .wp-editor-content ul ul ul,
+body .acf-block-preview ul ul ul,
+body .acf-block-fields ul ul ul,
+body .acf-field-wysiwyg ul ul ul,
+html body .wp-editor-content ul ul ul,
+html body .wp-block-post-content ul ul ul,
+html body .entry-content ul ul ul {
+    list-style-type: square !important;
+}
+
+/* Genummerde lijsten */
+body .wp-editor-content ol,
+body .wp-block-post-content ol,
+body .entry-content ol,
+body .acf-editor-wrap .wp-editor-area + .wp-editor-tools ol,
+body .acf-field-wysiwyg .wp-editor-content ol,
+body .acf-block-preview ol,
+body .acf-block-fields ol,
+body .acf-field-wysiwyg ol,
+html body .wp-editor-content ol,
+html body .wp-block-post-content ol,
+html body .entry-content ol {
+    list-style-type: decimal !important;
+    list-style-position: outside !important;
+    padding-left: 1.5rem !important;
+    margin: 1rem 0 !important;
+}
+
+body .wp-editor-content ol li,
+body .wp-block-post-content ol li,
+body .entry-content ol li,
+body .acf-editor-wrap .wp-editor-area + .wp-editor-tools ol li,
+body .acf-field-wysiwyg .wp-editor-content ol li,
+body .acf-block-preview ol li,
+body .acf-block-fields ol li,
+body .acf-field-wysiwyg ol li,
+html body .wp-editor-content ol li,
+html body .wp-block-post-content ol li,
+html body .entry-content ol li {
+    margin-bottom: 0.5rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Geneste genummerde lijsten */
+body .wp-editor-content ol ol,
+body .wp-block-post-content ol ol,
+body .entry-content ol ol,
+body .acf-editor-wrap .wp-editor-area + .wp-editor-tools ol ol,
+body .acf-field-wysiwyg .wp-editor-content ol ol,
+body .acf-block-preview ol ol,
+body .acf-block-fields ol ol,
+body .acf-field-wysiwyg ol ol,
+html body .wp-editor-content ol ol,
+html body .wp-block-post-content ol ol,
+html body .entry-content ol ol {
+    list-style-type: lower-alpha !important;
+    margin: 0.5rem 0 !important;
+}
+
+body .wp-editor-content ol ol ol,
+body .wp-block-post-content ol ol ol,
+body .entry-content ol ol ol,
+body .acf-editor-wrap .wp-editor-area + .wp-editor-tools ol ol ol,
+body .acf-field-wysiwyg .wp-editor-content ol ol ol,
+body .acf-block-preview ol ol ol,
+body .acf-block-fields ol ol ol,
+body .acf-field-wysiwyg ol ol ol,
+html body .wp-editor-content ol ol ol,
+html body .wp-block-post-content ol ol ol,
+html body .entry-content ol ol ol {
+    list-style-type: lower-roman !important;
+}
+
+/* Editor specifieke styling */
+body .wp-editor-container .wp-editor-area {
+    font-family: inherit !important;
+}
+
+/* Zorg ervoor dat de styling ook werkt in de Gutenberg editor */
+body .editor-styles-wrapper ul,
+html body .editor-styles-wrapper ul {
+    list-style-type: disc !important;
+    list-style-position: outside !important;
+    padding-left: 1.5rem !important;
+    margin: 1rem 0 !important;
+}
+
+body .editor-styles-wrapper ul li,
+html body .editor-styles-wrapper ul li {
+    margin-bottom: 0.5rem !important;
+    line-height: 1.6 !important;
+}
+
+body .editor-styles-wrapper ol,
+html body .editor-styles-wrapper ol {
+    list-style-type: decimal !important;
+    list-style-position: outside !important;
+    padding-left: 1.5rem !important;
+    margin: 1rem 0 !important;
+}
+
+body .editor-styles-wrapper ol li,
+html body .editor-styles-wrapper ol li {
+    margin-bottom: 0.5rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Extra styling voor ACF blocks en WYSIWYG velden */
+body .acf-block-preview .wp-editor-content ul,
+body .acf-block-preview .wp-editor-content ol,
+body .acf-block-fields .wp-editor-content ul,
+body .acf-block-fields .wp-editor-content ol {
+    list-style-type: inherit !important;
+    padding-left: 1.5rem !important;
+    margin: 1rem 0 !important;
+}
+
+/* Zorg ervoor dat de styling ook werkt in de frontend voor content die via wp_kses_post wordt getoond */
+body .wp-kses-post ul,
+body .wp-kses-post ol,
+html body .wp-kses-post ul,
+html body .wp-kses-post ol {
+    list-style-type: inherit !important;
+    padding-left: 1.5rem !important;
+    margin: 1rem 0 !important;
+}
+
+body .wp-kses-post ul,
+html body .wp-kses-post ul {
+    list-style-type: disc !important;
+}
+
+body .wp-kses-post ol,
+html body .wp-kses-post ol {
+    list-style-type: decimal !important;
+}
+
+body .wp-kses-post ul ul,
+html body .wp-kses-post ul ul {
+    list-style-type: circle !important;
+}
+
+body .wp-kses-post ul ul ul,
+html body .wp-kses-post ul ul ul {
+    list-style-type: square !important;
+}
+
+body .wp-kses-post ol ol,
+html body .wp-kses-post ol ol {
+    list-style-type: lower-alpha !important;
+}
+
+body .wp-kses-post ol ol ol,
+html body .wp-kses-post ol ol ol {
+    list-style-type: lower-roman !important;
+}

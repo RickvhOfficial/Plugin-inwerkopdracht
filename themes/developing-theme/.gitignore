@@ -1,0 +1,17 @@
+.DS_Store
+shell.sh
+composer.lock
+node_modules/
+vendor/
+package-lock.json
+
+# Ignore everything outside this theme folder
+../../*
+../../uploads/
+../../cache/
+../../languages/
+../../mu-plugins/
+../../plugins/
+../../advanced-cache.php
+../../wp-rocket-config/
+../../ai1wm-backups/

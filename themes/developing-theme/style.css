@@ -1,0 +1,213 @@
+@charset 'UTF-8';
+
+/*
+* Theme Name: Developing
+*/
+
+.portfolio-single {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.portfolio-single h1 {
+    font-size: 2.5em;
+    margin-bottom: 2rem;
+}
+
+.portfolio-meta p {
+    margin: .5rem 0;
+}
+
+.portfolio-extra-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem 0;
+}
+
+.portfolio-beschrijving {
+    margin: 2rem 0;
+    font-size: 1.1em;
+
+}
+
+.team {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 2em;
+    margin-bottom: 2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.team-lid {
+    justify-content: center;
+}
+
+.team-lid img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    max-width: 10rem;
+    margin-bottom: 1rem;
+}
+
+.team-lid h3 {
+    margin: 1rem 0 .5rem;
+    font-size: 1.2em;
+}
+
+.team-lid p {
+    margin: 0;
+    color: #555;
+}
+
+.project-beschrijving {
+    margin: 6rem 0 2rem;
+    font-size: 1.1em;
+}
+
+.project-beschrijving h2 {
+    font-size: 1.1em;
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+
+.top-content {
+    place-items: center;
+}
+
+/* ── Project Single Basis Styling ── */
+.project-single {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+.project-header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Project Meta */
+.project-meta {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+}
+
+.project-meta h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.project-meta dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem 1rem;
+}
+
+.project-meta dt {
+    font-weight: bold;
+}
+
+.project-meta dd {
+    margin: 0;
+}
+
+/* Projectfasen */
+.projectfasen {
+    margin-bottom: 2rem;
+}
+
+.projectfasen h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.fasen-lijst {
+    list-style: none;
+    padding: 0;
+}
+
+.fase {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    background-color: #fff;
+}
+
+.fase__naam {
+    margin: 0 0 0.25rem;
+    font-weight: bold;
+}
+
+.fase__beschrijving {
+    margin: 0 0 0.5rem;
+}
+
+.fase__status {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.fase__status--gepland { background-color: #888; }
+.fase__status--bezig { background-color: #0073aa; }
+.fase__status--afgerond { background-color: #46b450; }
+
+/* Gerelateerde projecten */
+.projecten-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    margin: 0 0 2rem;
+}
+
+.project-kaart {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.project-kaart:hover {
+    transform: translateY(-3px);
+}
+
+.project-kaart img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-kaart h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.1rem;
+}
+
+.project-content {
+    margin-top: 2rem;
+}   

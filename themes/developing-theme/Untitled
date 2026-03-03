@@ -1,0 +1,23 @@
+.portfolio-single {
+    max-width: 900px;
+}
+
+.portfolio-meta {
+    max-width: 90px;
+}
+
+.portfolio-extra-image {
+    max-width: 90px;
+}
+
+.portfolio-content {
+    max-width: 90px;
+}
+
+.team {
+ max-width: 90px;
+}
+
+.team-lid {
+    max-width: 90px;
+}
