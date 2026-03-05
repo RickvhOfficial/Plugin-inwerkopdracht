@@ -17,6 +17,7 @@ require_once 'acf_blocks.php';
 
 // Load all necessary includes
 $includes = [
+    'includes/gravityforms-validatie.php',
     'includes/custom-post-types.php',
     'includes/theme-setup.php',
     'includes/enqueue-scripts.php',
