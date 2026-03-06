@@ -26,8 +26,17 @@ $includes = [
     'includes/popup-scripts.php',
     'includes/theme-customizer.php',
     'includes/editor-styles.php',
-    'includes/acf-block-examples.php'
+    'includes/acf-block-examples.php',
+    'includes/woocommerce-product.php'
 ];
+
+// Pas automatisch SEO-titel aan voor Portfolio items
+add_filter('wpseo_title', function($title) {
+    if (is_singular('portfolio')) { // check of we een portfolio-item bekijken
+        $title = 'Portfolio: ' . get_the_title() . ' | ' . get_bloginfo('name');
+    }
+    return $title;
+});
 
 foreach ($includes as $file) {
     if (file_exists(get_template_directory() . '/' . $file)) {

@@ -1,6 +1,6 @@
 <?php
 
-use Walker_Nav_Menu;
+// use Walker_Nav_Menu;
 
 /**
  * Custom walker class voor het WordPress navigatiemenu.

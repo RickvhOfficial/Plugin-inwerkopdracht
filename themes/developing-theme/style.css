@@ -211,3 +211,12 @@
 .project-content {
     margin-top: 2rem;
 }   
+
+.gratis-verzending-check {
+    background-color: #f0faf0;
+    border-left: 3px solid #4caf50;
+    color: #2e7d32;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    font-weight: 600;
+}
