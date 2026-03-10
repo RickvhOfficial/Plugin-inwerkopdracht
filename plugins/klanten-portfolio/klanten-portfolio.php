@@ -1,12 +1,9 @@
 <?php
 /**
  * Plugin Name: Klanten Portfolio CPT
- * Plugin URI:  https://example.com
  * Description: Registreert het Klanten Portfolio custom post type.
  * Version:     1.0.0
  * Author:      Rick van Houten
- * License:     GPL-2.0+
- * Text Domain: klanten-portfolio
  */ 
  
 
@@ -37,7 +34,7 @@ class Klanten_Portfolio {
 
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-klant-cpt.php';
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-klant-shortcodes.php';
-        require_once plugin_dir_path( __FILE__ ) . 'includes/class-klant-admin-columns.php';
+        // require_once plugin_dir_path( __FILE__ ) . 'includes/class-klant-admin-columns.php';
     
     }
 
@@ -48,7 +45,7 @@ class Klanten_Portfolio {
 
         new Klant_CPT();
         new Klant_Shortcodes();
-        new Klant_Admin_Columns();
+        // new Klant_Admin_Columns();
     }
 }
 
