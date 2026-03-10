@@ -9,7 +9,8 @@ module.exports = {
     "./includes/acf-fields/**/*.php",
     "./resources/blocks/*.php",
     "./resources/blocks/**/*.php",
-    "./node_modules/flowbite/**/*.js"
+    "./node_modules/flowbite/**/*.js",
+    "../../plugins/**/*.php"
   ],
   theme: {
     extend: {

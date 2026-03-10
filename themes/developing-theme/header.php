@@ -15,9 +15,9 @@
 		-->
         
   </head>
-  <body <?php body_class(); ?>>
+  <body <?php body_class('min-h-screen flex flex-col'); ?>>
 
-  <header class="w-full top-0 z-50">
+  <header class="w-full sticky top-0 z-50">
     <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 shadow-md">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl lg:px-6">
             <a href="/" class="flex items-center lg:w-1/4">
