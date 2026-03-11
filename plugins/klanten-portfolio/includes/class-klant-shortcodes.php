@@ -53,12 +53,11 @@ class Klant_Shortcodes {
 
         /* checkt of er klanten gevonden zijn */
         if ($query->have_posts()) {
-            echo '<div class="grid grid-cols-2 md:grid-cols-3 gap-4">';
+            echo '<div class="grid grid-cols-5 md:grid-cols-5 gap-4">';
 
             while ($query->have_posts()) {
                 $query->the_post();
 
-                /* Elke kaart heeft geen vaste breedte (w-80 verwijderd) zodat het grid de breedte bepaalt */
                 echo '<div class="border-2 border-gray-300 rounded-md p-4">';
                 echo '<h3 class="font-bold text-lg mb-2">' . get_the_title() . '</h3>';
 
@@ -74,7 +73,7 @@ class Klant_Shortcodes {
                     echo '<p>Sector: ' . esc_html($sectoren[0]->name) . '</p>';
                 }
 
-                echo '</div>'; /* sluit de kaart div */
+                echo '</div>'; 
             }
 
             echo '</div>';
@@ -111,7 +110,7 @@ class Klant_Shortcodes {
             echo '<p class="text-center text-2xl font-bold w-full bg-red-500 text-white p-4">Ongeldige klant.</p>';
             return ob_get_clean();
         }
-
+        echo '<div class="grid grid-cols-5 md:grid-cols-5 gap-4 max-h-md">';
         echo '<div class="border-2 border-gray-300 rounded-md p-4 max-w-xl">';
 
         echo '<h2 class="text-2xl font-bold mb-4">' . get_the_title($post_id) . '</h2>';
@@ -166,6 +165,7 @@ class Klant_Shortcodes {
                 echo '<li><a href="' . get_permalink($project->ID) . '">' . get_the_title($project->ID) . '</a></li>';
             }
             echo '</ul>';
+            echo '</div>';
         }
 
         echo '</div>';
