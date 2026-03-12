@@ -16,14 +16,22 @@ class Shortcode_Medewerker {
         $post_id = intval( $atts['id'] );
  
         /* checken of de post bestaat anders niks laten zien nu tijdelijk om gezet naar error: medewerker niet gevonden voor test */
-        if ( ! $post_id || ! get_post( $post_id ) ) return 'error: medewerker niet gevonden';
+        if ( empty($post_id) ) {
+            return 'error: medewerker niet gevonden voor test';
+        }
         
+        $post = get_post($post_id);
+        
+        if ( ! $post ) {
+            return 'error: medewerker niet gevonden';
+        }
+    
         $functietitel = get_field( 'functietitel', $post_id );
         $afdeling     = get_field( 'afdeling', $post_id );
         $telefoon     = get_field( 'telefoonnummer', $post_id );
         $foto         = get_field( 'profielfoto', $post_id); 
-
-        $output = '<div class="medewerker-kaart border p-4 rounded">';
+       
+        $output = '<div class="medewerker-kaart p-4 rounded">';
 
         if ( $foto ) {
             /* URL ophalen uit de array uit het ACF field */
