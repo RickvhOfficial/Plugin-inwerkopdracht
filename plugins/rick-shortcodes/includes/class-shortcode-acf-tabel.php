@@ -54,7 +54,7 @@ class Shortcode_ACF_Tabel {
                         $value = $value ? 'Ja' : 'Nee';
                         break;
                     case 'checkbox':
-                        $value = implode(', ', (array) $value);
+                        $value = implode(', ', (array) $value); /* implode maakt een string van de array*/
                         break;
                     case 'image':
                         $image_id = is_array($value) ? $value['ID'] : $value;
