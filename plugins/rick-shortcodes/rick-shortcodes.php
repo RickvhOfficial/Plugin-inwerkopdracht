@@ -34,7 +34,8 @@ class Rick_Shortcodes_Plugin {
     private function includes() {
 
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-shortcode-medewerker.php';
-
+        require_once plugin_dir_path( __FILE__ ) . 'includes/class-shortcode-voorwaardelijk.php';
+        require_once plugin_dir_path( __FILE__ ) . 'includes/class-shortcode-recente-items.php';
     
     }
 
@@ -44,7 +45,8 @@ class Rick_Shortcodes_Plugin {
     private function init_classes() {
 
         new Shortcode_Medewerker();
-
+        new Shortcode_Voorwaardelijk();
+        new Shortcode_Recente_Items();
     }
 }
 
