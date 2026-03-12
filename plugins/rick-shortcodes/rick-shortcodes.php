@@ -37,6 +37,7 @@ class Rick_Shortcodes_Plugin {
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-shortcode-voorwaardelijk.php';
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-shortcode-recente-items.php';
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-shortcode-acf-tabel.php';
+        require_once plugin_dir_path( __FILE__ ) . 'includes/class-shortcode-post-teller.php';
     
     }
 
@@ -49,6 +50,7 @@ class Rick_Shortcodes_Plugin {
         new Shortcode_Voorwaardelijk();
         new Shortcode_Recente_Items();
         new Shortcode_ACF_Tabel();
+        new Shortcode_Post_Teller();
     }
 }
 
