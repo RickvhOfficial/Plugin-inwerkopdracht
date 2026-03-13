@@ -62,12 +62,25 @@ class Bedrijfsgegevens {
 
     /**
      * Openingstijden ophalen 
-     */
+     */ 
     public static function get_openingstijden(): array {
+        // kijken of er een cached versie is van de openingstijden
+        $cached = get_transient( 'bg_openingstijden' );
+        if ( $cached !== false ) {
+            return $cached; // return cached data
+        }
+    
+        // haal data uit ACF Options Page
         $openingstijden = get_field( 'openingstijden', 'option' );
-        return is_array( $openingstijden ) ? $openingstijden : [];
+        if ( ! is_array( $openingstijden ) ) {
+            $openingstijden = [];
+        }
+    
+        // sla op in transient verloopt na 12 uur
+        set_transient( 'bg_openingstijden', $openingstijden, 12 * HOUR_IN_SECONDS );
+    
+        return $openingstijden;
     }
-
     /**
      * Huidige dag ophalen
      */
