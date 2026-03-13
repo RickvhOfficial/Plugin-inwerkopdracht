@@ -62,7 +62,7 @@ class Bedrijfsgegevens {
 
     /**
      * Openingstijden ophalen 
-     */
+     */ 
     public static function get_openingstijden(): array {
         // kijken of er een cached versie is van de openingstijden
         $cached = get_transient( 'bg_openingstijden' );
