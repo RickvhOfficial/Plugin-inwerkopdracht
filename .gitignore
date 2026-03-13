@@ -13,6 +13,7 @@ plugins/*
 !plugins/klanten-portfolio/
 !plugins/rick-shortcodes/ 
 !plugins/bedrijfsgegevens/
+!plugins/offerte-aanvragen/
 
 # Ignore cache, uploads, backups
 uploads/
