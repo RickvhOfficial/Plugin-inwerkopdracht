@@ -12,6 +12,7 @@ plugins/*
 !plugins/custom-portfolio/
 !plugins/klanten-portfolio/
 !plugins/rick-shortcodes/ 
+!plugins/bedrijfsgegevens/
 
 # Ignore cache, uploads, backups
 uploads/
