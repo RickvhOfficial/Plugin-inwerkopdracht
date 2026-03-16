@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// WP_List_Table is een WordPress core class
+/* WP_List_Table is een WordPress core class */
 if ( ! class_exists( 'WP_List_Table' ) ) {
     require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
@@ -97,17 +97,30 @@ class Offerte_List_Table extends WP_List_Table {
     /*
      * Status kolom met kleur badges
      */
-    protected function column_status($item): string {
-        $color = match($item->status) {
-            'nieuw' => 'blue',
-            'in_behandeling' => 'orange',
-            'offerte_verstuurd' => 'green',
-            'afgerond' => 'darkgreen',
-            'afgewezen' => 'red',
-            default => 'gray',
-        };
+    protected function column_status( $item ) {
 
-        return sprintf('<span style="color:%s;font-weight:bold;">%s</span>', $color, esc_html($item->status));
+        $statuses = [
+            'nieuw',
+            'in_behandeling',
+            'offerte_verstuurd',
+            'afgerond',
+            'afgewezen'
+        ];
+    
+        $html = '<select class="offerte-status-select" data-offerte-id="' . esc_attr( $item->id ) . '">';
+    
+        foreach ( $statuses as $status ) {
+    
+            $selected = selected( $item->status, $status, false );
+    
+            $html .= '<option value="' . esc_attr( $status ) . '" ' . $selected . '>'
+                    . esc_html( ucfirst( str_replace('_',' ',$status) ) )
+                    . '</option>';
+        }
+    
+        $html .= '</select>';
+    
+        return $html;
     }
 
     /*

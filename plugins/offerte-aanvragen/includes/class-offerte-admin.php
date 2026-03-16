@@ -6,11 +6,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Offerte_Admin {
 
+
+public function enqueue_admin_scripts($hook) {
+
+    /* Alleen laden op de overzichtspagina van de plugin */
+    if (!in_array($hook, ['toplevel_page_offerte-aanvragen', 'offerte-aanvragen_page_offerte-aanvragen'])) {
+        return;
+    }
+
+    /* JS bestand voor AJAX status updates */
+    wp_enqueue_script(
+        'offerte-admin-js',
+        plugin_dir_url(dirname(__FILE__)) . 'includes/js/offerte-admin.js', // CORRECT PAD
+        ['jquery'],
+        '1.0',
+        true
+    );
+
+    /* Nonce wordt beschikbaar voor JS */
+    wp_localize_script('offerte-admin-js', 'OfferteAjax', [
+        'nonce' => wp_create_nonce('offerte_status_nonce'),
+    ]);
+}
+
     public function __construct() {
 
         /* WordPress hook om admin menu items te registreren */
         add_action( 'admin_menu', [ $this, 'register_menu' ] );
 
+        /* WordPress hook voor scripts */
+        add_action('admin_enqueue_scripts', [$this, 'enqueue_admin_scripts']);
     }
 
     /**
@@ -54,6 +79,9 @@ class Offerte_Admin {
 
         echo '<div class="wrap">';
         echo '<h1>Offerte aanvragen</h1>';
+        
+        /* Container voor AJAX meldingen */
+        echo '<div id="offerte-message-container"></div>';
     
         echo '<form method="post">';
         $list_table = new Offerte_List_Table();
@@ -78,5 +106,7 @@ class Offerte_Admin {
         echo '</div>';
 
     }
+
+    
 
 }
