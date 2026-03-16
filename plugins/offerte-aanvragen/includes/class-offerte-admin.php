@@ -54,7 +54,15 @@ class Offerte_Admin {
 
         echo '<div class="wrap">';
         echo '<h1>Offerte aanvragen</h1>';
-        echo '<p>Hier komt straks de lijst met offerte aanvragen.</p>';
+    
+        echo '<form method="post">';
+        $list_table = new Offerte_List_Table();
+        $list_table->process_bulk_action();
+        $list_table->prepare_items();
+        $list_table->display();
+        wp_nonce_field('bulk-offerte');
+        echo '</form>';
+    
         echo '</div>';
 
     }
