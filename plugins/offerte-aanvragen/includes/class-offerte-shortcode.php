@@ -151,7 +151,7 @@ class Offerte_Shortcode {
 <?php wp_nonce_field('offerte_form_nonce','offerte_nonce'); ?>
 
 <p class="text-center mt-4">
-<button class="bg-yellow-400 text-white px-4 py-2 rounded-md mb-1 hover:bg-yellow-500" style="width: 10rem;" type="submit" name="offerte_submit">Versturen</button>
+<button class="text-white px-4 py-2 rounded-md mb-1 hover:bg-yellow-500" style="width: 10rem; background-color: #C49B2B; font-weight: 600;" type="submit" name="offerte_submit">Versturen</button>
 </p>
 
 </form>
