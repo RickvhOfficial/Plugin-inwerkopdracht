@@ -31,14 +31,14 @@ class Offerte_Aanvragen {
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-offerte-admin.php';
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-offerte-list-table.php';
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-offerte-ajax.php';
-        // require_once plugin_dir_path( __FILE__ ) . 'includes/class-offerte-shortcode.php';
+        require_once plugin_dir_path( __FILE__ ) . 'includes/class-offerte-shortcode.php';
 
     }
 
     public function init_classes(): void {
         new Offerte_Admin();
         new Offerte_Ajax();
-        // new Offerte_Shortcode();
+        new Offerte_Shortcode();
 
     }
 
